@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaymin Dattani - Techy Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .profile-img {
+            width: 150px; /* Adjust size for smaller screens */
+            height: 150px; /* Adjust size for smaller screens */
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .project-card {
+            height: 100%;
+            transition: transform 0.2s; /* Smooth transition */
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px); /* Move the card up slightly */
+        }
+        @media (min-width: 768px) {
+            .profile-img {
+                width: 200px;
+                height: 200px;
+            }
+            .lead {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: large; /* Larger size for larger screens */
+            }
+            .main_text {
+                font-size: 1rem; /* Default size for larger screens */
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+        }
+        @media (max-width: 576px) {
+            .lead {
+                font-size: 0.7rem; /* Smaller size for mobile screens */
+            }
+            .main_text {
+                font-size: 1rem !important ; /* Smaller size for mobile screens */
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+        }
+        .project-card {
+            height: 100%;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+        }
+        .social-icons a:hover {
+            color: #ddd;
+        }
+        #languageChart {
+            width: 100% !important;
+            height: 300px !important;
+        }
+        .skill-logo {
+            width: 30px;
+            height: auto;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .d-flex {
+            display: flex;
+            align-items: center;
+        }
+        .me-2 {
+            margin-right: 0.5rem;
+        }
+        .main_text {
+            font-size: x-large; /* Default size for larger screens */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    
+    <header class="bg-primary text-white text-center text-md-start py-5">
+        <div class="container d-flex align-items-center">
+            <div class="me-4">
+                <img src="./me.jpg" alt="Jaymin Dattani" class="profile-img">
+            </div>
+            <div>
+                <h1 class="display-4">Jaymin Dattani</h1>
+                <p class="lead">Diploma Student at Marwadi University | Skilled in Web Development Technologies | JavaScript, PHP | Open to Explore New Opportunities</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <section id="about" class="mb-5">
+            <h2 class="mb-3" style="font-family:Georgia, 'Times New Roman', Times, serif">🙋‍♂️ <b>About Me</b></h2>
+            <div class="d-flex align-items-center mb-3">
+                <!-- <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" alt="Waving GIF" class="ms-3" style="width: 30px; height: auto;"> -->
+                <h2 style="font-family:Georgia, 'Times New Roman', Times, serif">Hey there! I'm Jaymin Dattani</h2>
+            </div>
+            <p class="main_text">
+                I'm a dedicated student at Marwadi University, currently pursuing a Diploma in Computer Engineering with a stellar SPI of 10. My passion lies in expanding my skill set and staying updated on emerging technologies in the field. This eagerness to learn drives me to seek out fresh challenges and growth opportunities continuously.
+            </p>
+
+            <div class="d-flex align-items-center mb-3">
+                <h3 style="font-family:Georgia, 'Times New Roman', Times, serif">👨‍💻 Current Focus</h3>
+            </div>
+            <p class="main_text">
+                Currently, I’m honing my web development skills, with aspirations to dive deeper into application development and beyond. As I progress in my academic journey, I’m eager to explore internships and projects where I can apply my skills in real-world situations, gain valuable experience, and continue learning.
+            </p>
+
+            <div class="d-flex align-items-center mb-3">
+                <h3 style="font-family:Georgia, 'Times New Roman', Times, serif">🌎 Let's Connect!</h3>
+            </div>
+            <p class="main_text">
+                I’m excited about the future and the opportunities it holds. If you have any projects or internships in mind, I would love to connect and collaborate!
+            </p>
+        </section>
+
+        <section id="projects" class="mb-5">
+            <h2 class="mb-3" style="font-family:Georgia, 'Times New Roman', Times, serif">🚀 <b>My Projects</b></h2>
+            <div class="row g-4" id="projectContainer">
+                
+                <div class="col-md-6">
+                    <div class="card project-card">
+                        <div class="card-body">
+                            <h5 class="card-title d-flex justify-content-between align-items-center">
+                                OTW Tourism
+                                <span class="badge bg-primary text-white">Website</span>
+                            </h5>
+                            <p class="card-text"><strong>Location:</strong> Marwadi University | <strong>Date:</strong> Dec 2023 | <strong>For:</strong> 5th Sem Mini-Project</p>
+                            <p class="card-text">This is a tourism website built using HTML, CSS, JavaScript, and PHP. It aims to provide users with an engaging and informative platform to explore various travel destinations, discover hidden gems, and plan their dream vacations.</p>
+                            <h6><b> 🔑 Key Features:</b></h6>
+                            <ul>
+                                <li>Dynamic Content: Fetches real-time travel updates.</li>
+                                <li>Interactive Maps: Explore destinations visually.</li>
+                                <li>User Login: Create personalized itineraries.</li>
+                                <li>Image Carousels: Showcase stunning destination visuals.</li>
+                                <li>Cloud SQL: Efficient database management.</li>
+                            </ul>
+                            
+                            <div class="d-flex justify-content-between mt-3">
+                                <a href="https://github.com/J-Dattani/OTW_Toursim_Website" target="_blank" class="btn btn-primary">
+                                    <img src="https://img.icons8.com/material-outlined/24/ffffff/github.png" alt="GitHub" /> GitHub
+                                </a>
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card project-card">
+                        <div class="card-body">
+                            <h5 class="card-title d-flex justify-content-between align-items-center">
+                                Project Name 2
+                                <span class="badge bg-primary text-white">E-commerce</span>
+                            </h5>
+                            <p class="card-text"><strong>Location:</strong> Remote | <strong>Date:</strong> March 2023 | <strong>For:</strong> Freelance Client</p>
+                            <p class="card-text">Developed an e-commerce platform using PHP and MySQL, implementing features like user authentication and payment processing.</p>
+                            <h6><b>Key Features:</b></h6>
+                            <ul>
+                                <li>Secure payment processing</li>
+                                <li>User account management</li>
+                                <li>Product search and filtering</li>
+                            </ul>
+                            <div class="d-flex justify-content-between mt-3">
+                                <a href="https://github.com/YourGitHubUsername/project2" target="_blank" class="btn btn-primary">
+                                    <img src="https://img.icons8.com/material-outlined/24/ffffff/github.png" alt="GitHub" /> GitHub
+                                </a>
+                                <a href="https://yourwebsite.com/project2" target="_blank" class="btn btn-success">
+                                    <img src="https://img.icons8.com/material-outlined/24/ffffff/link.png" alt="Live Website" /> Live
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+        </section>
+        
+
+        <section id="skills" class="mb-5">
+            <h2 class="mb-3">Skills</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <canvas id="languageChart"></canvas>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-group mt-3">
+                        <li class="list-group-item">
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-plain.svg" alt="HTML5" class="skill-logo"> HTML5
+                        </li>
+                        <li class="list-group-item">
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-plain-wordmark.svg" alt="CSS3" class="skill-logo"> CSS3
+                        </li>
+                        <li class="list-group-item">
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg" alt="JavaScript" class="skill-logo"> JavaScript (ES6+)
+                        </li>
+                        <li class="list-group-item">
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-plain.svg" alt="PHP" class="skill-logo"> PHP
+                        </li>
+                        <li class="list-group-item">
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="MySQL" class="skill-logo"> MySQL
+                        </li>
+                        <li class="list-group-item">
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-plain.svg" alt="Git/GitHub" class="skill-logo"> Git & GitHub
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="social-icons">
+            <a href="https://github.com/YourGitHubUsername" target="_blank">
+                <img src="https://img.icons8.com/material-outlined/24/ffffff/github.png" alt="GitHub" />
+            </a>
+            <a href="https://www.linkedin.com/in/YourLinkedInUsername" target="_blank">
+                <img src="https://img.icons8.com/material-outlined/24/ffffff/linkedin.png" alt="LinkedIn" />
+            </a>
+        </div>
+        <p class="mt-2">
+            <strong>Contact Me:</strong> <a href="mailto:your.email@example.com" class="text-white">your.email@example.com</a>
+        </p>
+        <p>&copy; 2023 Jaymin Dattani. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const ctx = document.getElementById('languageChart').getContext('2d');
+        const languageChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'MySQL', 'Git/GitHub'],
+                datasets: [{
+                    label: 'Skill Level',
+                    data: [90, 90, 75, 60, 60, 80],
+                    backgroundColor: 'rgb(0, 150, 255)',
+                    borderColor: 'rgb(0, 71, 171)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        labels: {
+                            font: {
+                                size: 16,
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            font: {
+                                size: 14,
+                            }
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: {
+                                size: window.innerWidth < 768 ? 10 : 14,
+                            },
+                            autoSkip: false,
+                            maxRotation: 0,
+                            minRotation: 0
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
