@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Section from './Section.jsx'
-import { certificates as data } from '../data/certificates.js'
-import { ExternalLink, Eye } from 'lucide-react'
+import { achievements as data } from '../data/achievements.js'
 
 const container = {
   hidden: { opacity: 0 },
@@ -17,26 +16,29 @@ const item = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
 }
 
-function CertificateCard({ c, onPreview }) {
+function AchievementCard({ a, onPreview }) {
   const onImgError = (e) => {
     e.currentTarget.style.display = 'none'
     const fallback = e.currentTarget.parentElement.querySelector('.img-fallback')
     if (fallback) fallback.style.display = 'block'
   }
-  const verifyUrl = typeof c.verifyUrl === 'string' ? c.verifyUrl.trim() : ''
-  const hasVerify = verifyUrl.length > 0
 
   return (
     <motion.article
       variants={item}
       whileHover={{ y: -8 }}
-      className="group relative overflow-hidden glass rounded-2xl gradient-glow"
+      onClick={() => onPreview(a)}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e)=>{ if (e.key === 'Enter' || e.key === ' ') onPreview(a) }}
+      className="group relative overflow-hidden glass rounded-2xl gradient-glow cursor-pointer"
+      aria-label={`Preview ${a.title}`}
     >
       <div className="relative">
-        {c.image && (
+        {a.image && (
           <img
-            src={c.image}
-            alt={c.title + ' certificate'}
+            src={a.image}
+            alt={a.title + ' image'}
             loading="lazy"
             onError={onImgError}
             className="block w-full aspect-[16/10] object-contain bg-slate-50 p-2"
@@ -46,46 +48,21 @@ function CertificateCard({ c, onPreview }) {
       </div>
 
       <div className="relative z-10 p-5">
-        <h3 className="font-semibold text-lg tracking-tight">{c.title}</h3>
-        <p className="mt-1 text-slate-600 text-sm">{c.issuer} • {c.year}</p>
-        {c.description && String(c.description).trim().length > 0 && (
-          <p className="mt-2 text-slate-600 text-sm leading-snug">
-            {c.description}
-          </p>
+        <h3 className="font-semibold text-lg tracking-tight">{a.title}</h3>
+        <p className="mt-1 text-slate-600 text-sm">{a.issuer} • {a.year}</p>
+        {a.description && String(a.description).trim().length > 0 && (
+          <p className="mt-2 text-slate-600 text-sm leading-snug">{a.description}</p>
         )}
-
-        <div className="mt-4 flex items-center gap-2">
-          <button
-            onClick={() => onPreview(c)}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-slate-300 hover:border-indigo-400 hover:text-indigo-700 transition-colors"
-          >
-            <Eye size={16} /> Preview
-          </button>
-          <a
-            href={hasVerify ? verifyUrl : undefined}
-            target={hasVerify ? "_blank" : undefined}
-            rel={hasVerify ? "noreferrer" : undefined}
-            aria-disabled={!hasVerify}
-            className={
-              hasVerify
-                ? "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-slate-300 hover:border-indigo-400 hover:text-indigo-700 transition-colors"
-                : "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/5 text-slate-500 cursor-not-allowed"
-            }
-            onClick={(e) => { if (!hasVerify) e.preventDefault() }}
-          >
-            <ExternalLink size={16} /> Verify
-          </a>
-        </div>
       </div>
     </motion.article>
   )
 }
 
-export default function Certificates() {
+export default function Achievements() {
   const [selected, setSelected] = useState(null)
 
   return (
-    <Section id="certificates" title="Certificates & Licenses">
+    <Section id="achievements" title="Achievements">
       <motion.div
         variants={container}
         initial="hidden"
@@ -93,18 +70,17 @@ export default function Certificates() {
         viewport={{ once: true, margin: '-80px' }}
         className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
       >
-        {data.map((c) => (
-          <CertificateCard key={c.id} c={c} onPreview={(c)=>setSelected(c)} />
+        {data.map((a) => (
+          <AchievementCard key={a.id} a={a} onPreview={setSelected} />
         ))}
       </motion.div>
 
-      {/* Lightbox */}
       {selected && (
         <div
           className="fixed inset-0 z-50 grid place-items-center bg-black/60 p-4"
           role="button"
           tabIndex={0}
-          aria-label="Close certificate preview"
+          aria-label="Close achievement preview"
           onClick={()=>setSelected(null)}
           onKeyDown={(e)=>{ if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') setSelected(null) }}
         >
@@ -117,7 +93,6 @@ export default function Certificates() {
             onClick={(e)=>e.stopPropagation()}
           >
             <div className="glass rounded-2xl overflow-hidden bg-white max-h-[90vh] flex flex-col">
-              {/* Preview area with a subtle neutral background so white certificates remain visible */}
               <div className="w-full flex-1 grid place-items-center bg-slate-50 p-2 overflow-auto">
                 {selected.image && (
                   <img
@@ -127,7 +102,6 @@ export default function Certificates() {
                   />
                 )}
               </div>
-              {/* Footer bar with title and Close action, pinned at the bottom */}
               <div className="p-4 flex items-center justify-between bg-slate-100/95 border-t border-slate-200 sticky bottom-0">
                 <div>
                   <h4 className="font-semibold truncate max-w-[60vw]" title={selected.title}>{selected.title}</h4>

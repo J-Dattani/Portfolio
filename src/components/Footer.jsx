@@ -2,7 +2,9 @@ export default function Footer() {
   const year = new Date().getFullYear()
   const links = [
     { href: '#home', label: 'Home' },
-    { href: '#work', label: 'Work' },
+    { href: '#about', label: 'About' },
+    { href: '#how', label: 'How I Work' },
+    { href: '#achievements', label: 'Achievements' },
     { href: '#skills', label: 'Skills' },
     { href: '#experience', label: 'Experience' },
     { href: '#contact', label: 'Contact' },

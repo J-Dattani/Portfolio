@@ -1,5 +1,5 @@
 import Section from './Section.jsx'
-import { Mail, Phone, Linkedin, Github, ArrowUpRight } from 'lucide-react'
+import { Mail, Linkedin, Github, ArrowUpRight } from 'lucide-react'
 
 function LinkCard({ label, subtitle, href, Icon }) {
   const external = href?.startsWith('http')
@@ -33,7 +33,6 @@ function LinkCard({ label, subtitle, href, Icon }) {
 
 export default function Contact() {
   const links = [
-    { label: 'Phone', subtitle: '9104368811', href: 'tel:9104368811', Icon: Phone },
     { label: 'Email', subtitle: 'work.jdattani@gmail.com', href: 'mailto:work.jdattani@gmail.com', Icon: Mail },
     { label: 'LinkedIn', subtitle: 'linkedin.com/in/jaymin-dattani-ba6695294', href: 'https://linkedin.com/in/jaymin-dattani-ba6695294', Icon: Linkedin },
     { label: 'GitHub', subtitle: 'github.com/J-Dattani', href: 'https://github.com/J-Dattani', Icon: Github },

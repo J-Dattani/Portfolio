@@ -5,9 +5,11 @@ import 'aos/dist/aos.css'
 import Nav from './components/Nav.jsx'
 import Contact from './components/Contact.jsx'
 import Hero from './components/Hero.jsx'
+import About from './components/About.jsx'
 import HowIWork from './components/HowIWork.jsx'
 import Projects from './components/Projects.jsx'
 import Certificates from './components/Certificates.jsx'
+import Achievements from './components/Achievements.jsx'
 import Skills from './components/Skills.jsx'
 // import Testimonials from './components/Testimonials.jsx' // Un-comment to enable when testimonials data is ready
 import Experience from './components/Experience.jsx'
@@ -26,11 +28,15 @@ export default function App() {
         <Doodles />
         <Hero />
 
+  <About />
+
         <HowIWork />
 
   <Projects />
 
   <Certificates />
+
+  <Achievements />
 
   <Skills />
 
