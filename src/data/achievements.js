@@ -1,4 +1,3 @@
-import Postman from '../assets/certs/Postman - Postman API Fundamentals Student Expert - 2024-11-19.png'
 import pf from '../assets/docs/𝗣𝗿𝗼𝗷𝗲𝗰𝘁 𝗙𝗮𝗶𝗿 𝟮𝟬𝟮𝟱.jpeg'
 
 // Add your achievements here. `description` is optional.

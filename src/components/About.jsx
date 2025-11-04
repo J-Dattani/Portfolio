@@ -3,7 +3,7 @@ import Section from './Section.jsx'
 export default function About() {
   return (
     <Section id="about" title="About Me">
-      <div className="glass rounded-2xl p-8 gradient-glow  max-w-[1400px] ">
+      <div className="glass rounded-2xl p-8 gradient-glow max-w-[1400px] transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl">
         <p className="text-slate-700 leading-relaxed">
           I’m a B.Tech Computer Engineering student at Marwadi University <br/> Driven by a strong passion for Web Development and a deep curiosity for emerging technologies. I enjoy building interactive, user-focused digital experiences that combine creativity with clean, efficient code.<br/><br/>
 

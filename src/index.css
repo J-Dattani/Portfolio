@@ -69,3 +69,36 @@ select:focus-visible {
   100% { transform: translateY(0) rotate(var(--rot, 0deg)) scaleX(var(--flip, 1)); }
 }
 .float-slow { animation: floaty 7s ease-in-out infinite; }
+
+/* Themed scrollbars: subtle, rounded, and on-brand */
+/* Firefox */
+html {
+  scrollbar-width: auto; /* auto | thin | none */
+  scrollbar-color: rgba(82, 106, 194, 0.615) rgba(15,23,42,0.06); /* thumb | track */
+}
+
+/* WebKit (Chrome, Edge, Safari, etc.) */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: rgba(15,23,42,0.06);
+  border-radius: 999px;
+}
+*::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(180deg, rgba(99,102,241,0.75), rgba(234,179,8,0.6));
+  border-radius: 999px;
+  border: 2px solid transparent; /* creates inset look */
+  background-clip: padding-box;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background-image: linear-gradient(180deg, rgba(99,102,241,0.85), rgba(234,179,8,0.7));
+}
+*::-webkit-scrollbar-thumb:active {
+  background-image: linear-gradient(180deg, rgba(99,102,241,0.95), rgba(234,179,8,0.85));
+}
+
+@media (max-width: 640px) {
+  *::-webkit-scrollbar { width: 8px; height: 8px; }
+}
