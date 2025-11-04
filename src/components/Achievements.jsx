@@ -62,7 +62,7 @@ export default function Achievements() {
   const [selected, setSelected] = useState(null)
 
   return (
-    <Section id="achievements" title="Achievements">
+    <Section id="achievements" title="Highlights">
       <motion.div
         variants={container}
         initial="hidden"

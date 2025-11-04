@@ -1,22 +1,15 @@
 import Postman from '../assets/certs/Postman - Postman API Fundamentals Student Expert - 2024-11-19.png'
-import GDG from '../assets/certs/CCD 2025.png'
+import pf from '../assets/docs/𝗣𝗿𝗼𝗷𝗲𝗰𝘁 𝗙𝗮𝗶𝗿 𝟮𝟬𝟮𝟱.jpeg'
 
 // Add your achievements here. `description` is optional.
 export const achievements = [
   {
-    id: 'Hackathon Winner 2025',
-    title: 'Hackathon Winner',
-    issuer: 'GDG Rajkot',
+    id: '𝗣𝗿𝗼𝗷𝗲𝗰𝘁 𝗙𝗮𝗶𝗿 𝟮𝟬𝟮𝟱',
+    title: '𝗣𝗿𝗼𝗷𝗲𝗰𝘁 𝗙𝗮𝗶𝗿 𝟮𝟬𝟮𝟱',
+    issuer: 'Marwadi University',
     year: '2025',
-    image: GDG,
-    description: 'Built a production-ready prototype in under 24 hours with a focus on UX and performance.',
+    image: pf,
+    description: 'The event showcased a wide range of student projects, each demonstrating practical thinking, creativity, and technical skills. It was a great opportunity to share our work, gain insights and engage with other students and faculty members.Our project, 𝗦𝗲𝗮𝗿𝗰𝗵𝟰𝗖𝗮𝗿𝗲𝗲𝗿, was selected for the fair. It is a Website designed to help students find the most suitable schools and colleges based on their academic performance, interests, and preferences. The platform offers personalized search options, secure login with OTP verification, and dedicated dashboards for both students and administrators—making it easier to navigate academic choices with confidence.',
   },
-  {
-    id: 'API Challenge 2024',
-    title: 'API Challenge Finalist',
-    issuer: 'Postman',
-    year: '2024',
-    image: Postman,
-    description: 'Automated collections and tests to deliver reliable API workflows under time pressure.',
-  },
+
 ]
