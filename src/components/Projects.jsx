@@ -29,7 +29,7 @@ function ProjectCard({ p }) {
     <motion.article
       variants={item}
       whileHover={{ y: -8 }}
-      className="group relative overflow-hidden glass rounded-2xl gradient-glow"
+      className="group relative overflow-hidden glass rounded-2xl gradient-glow cursor-pointer"
     >
       <div className="relative">
         {p.cover && (
@@ -47,7 +47,7 @@ function ProjectCard({ p }) {
 
       <div className="relative z-10 p-5">
         <h3 className="font-semibold text-lg tracking-tight">{p.title}</h3>
-        <p className="mt-2 text-slate-600 text-sm leading-relaxed">{p.summary}</p>
+        <p className="mt-2 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{p.summary}</p>
 
         <div className="mt-3 flex flex-wrap gap-2">
           {p.stack?.map((s) => (
@@ -62,7 +62,7 @@ function ProjectCard({ p }) {
             href={p.repo}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-slate-300 hover:border-indigo-400 hover:text-indigo-700 transition-colors"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-slate-300 dark:border-slate-600 hover:border-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-400 dark:text-slate-300 transition-colors"
           >
             <Github size={16} /> Code
           </a>
@@ -73,8 +73,8 @@ function ProjectCard({ p }) {
             aria-disabled={!hasLive}
             className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full ${
               hasLive
-                ? 'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-slate-300 hover:border-indigo-400 hover:text-indigo-700 transition-colors'
-                : 'bg-black/5 text-slate-500 cursor-not-allowed'
+                ? 'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-slate-300 dark:border-slate-600 hover:border-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-400 dark:text-slate-300 transition-colors'
+                : 'bg-black/5 dark:bg-white/5 text-slate-500 dark:text-slate-400 cursor-not-allowed'
             } transition-colors`}
             onClick={(e) => {
               if (!hasLive) e.preventDefault()

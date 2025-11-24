@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import Nav from './components/Nav.jsx'
+import ThemeToggle from './components/ThemeToggle.jsx'
 import Contact from './components/Contact.jsx'
 import Hero from './components/Hero.jsx'
 import About from './components/About.jsx'
@@ -24,6 +25,7 @@ export default function App() {
   return (
     <>
       <Nav />
+      <ThemeToggle />
       <main id="main" className="min-h-screen relative">
         <Doodles />
         <Hero />
@@ -32,13 +34,13 @@ export default function App() {
 
         <HowIWork />
 
+  <Skills />
+
   <Projects />
 
   <Certificates />
 
   <Achievements />
-
-  <Skills />
 
         <Experience />
 

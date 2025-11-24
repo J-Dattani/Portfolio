@@ -53,14 +53,14 @@ export default function HowIWork() {
             key={title}
             variants={item}
             whileHover={{ y: -6 }}
-            className="relative glass rounded-2xl p-6 gradient-glow overflow-hidden"
+            className="relative glass rounded-2xl p-6 gradient-glow overflow-hidden cursor-pointer hover:shadow-xl transition-shadow"
           >
             <div className="relative z-10">
               <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-indigo-600/10 text-indigo-700">
                 <Icon size={20} />
               </div>
               <h3 className="mt-4 font-semibold text-lg">{title}</h3>
-              <p className="mt-2 text-slate-600 text-sm leading-relaxed">{desc}</p>
+              <p className="mt-2 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{desc}</p>
             </div>
             {/* Accent light */}
             <div className="pointer-events-none absolute -bottom-12 -right-12 w-40 h-40 rounded-full blur-3xl opacity-40" style={{ background: 'radial-gradient(closest-side, rgba(99,102,241,0.18), transparent)' }} />

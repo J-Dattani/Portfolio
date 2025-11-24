@@ -23,7 +23,7 @@ export default function Experience() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: '-80px' }}
                     transition={{ duration: 0.6, ease: 'easeOut' }}
-                    className="relative glass rounded-2xl p-6 gradient-glow h-full"
+                    className="relative glass rounded-2xl p-6 gradient-glow h-full cursor-pointer hover:shadow-xl transition-shadow"
                   >
                     <div className="flex items-start gap-3">
                       <div className="mt-0.5 inline-flex items-center justify-center w-10 h-10 rounded-xl bg-indigo-600/10 text-indigo-700">
@@ -31,16 +31,16 @@ export default function Experience() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-lg leading-tight">
-                          {item.role} <span className="text-slate-500">— {item.company}</span>
+                          {item.role} <span className="text-slate-500 dark:text-slate-400">— {item.company}</span>
                         </h3>
-                        <div className="mt-1 flex flex-wrap gap-3 text-sm text-slate-600">
+                        <div className="mt-1 flex flex-wrap gap-3 text-sm text-slate-600 dark:text-slate-400">
                           <span className="inline-flex items-center gap-1"><Calendar size={14} /> {item.period}</span>
                           <span className="inline-flex items-center gap-1"><MapPin size={14} /> {item.location}</span>
                         </div>
                       </div>
                     </div>
 
-                    <ul className="mt-4 space-y-2 text-sm text-slate-700 list-disc pl-6">
+                    <ul className="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300 list-disc pl-6">
                       {item.bullets?.map((b) => (
                         <li key={b}>{b}</li>
                       ))}

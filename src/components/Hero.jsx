@@ -62,8 +62,8 @@ export default function Hero() {
                     onError={() => setShowImg(false)}
                   />
                 ) : (
-                  <div className="w-full h-full grid place-items-center bg-gradient-to-br from-white to-slate-100">
-                    <div className="text-5xl font-bold text-slate-700 select-none">JD</div>
+                  <div className="w-full h-full grid place-items-center bg-gradient-to-br from-white to-slate-100 dark:from-slate-800 dark:to-slate-900">
+                    <div className="text-5xl font-bold text-slate-700 dark:text-slate-200 select-none">JD</div>
                   </div>
                 )}
               </div>
@@ -87,7 +87,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: done ? 1 : 0, y: done ? 0 : 16 }}
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
-              className="mt-5 max-w-2xl text-slate-600"
+              className="mt-5 max-w-2xl text-slate-600 dark:text-slate-300"
             >
               {subtitle}
             </motion.p>
@@ -100,7 +100,7 @@ export default function Hero() {
             >
               <button
                 onClick={() => onScrollTo('#projects')}
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-slate-900 bg-white/80 backdrop-blur-sm border border-slate-900/15 shadow-sm hover:border-indigo-400 hover:shadow-md hover:-translate-y-px active:translate-y-0 transition-all"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-slate-900 dark:text-slate-100 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-900/15 dark:border-slate-300/20 shadow-sm hover:border-indigo-400 hover:shadow-md hover:-translate-y-px active:translate-y-0 transition-all"
               >
                 View Projects
               </button>
@@ -108,11 +108,11 @@ export default function Hero() {
                 href={LINKEDIN_URL}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="group relative inline-flex items-center gap-2 px-5 py-3 rounded-full text-slate-900 bg-white/80 backdrop-blur-sm border border-slate-900/15 ring-1 ring-black/5 hover:border-indigo-400 hover:ring-indigo-300/40 hover:shadow-md hover:-translate-y-px active:translate-y-0 transition-all"
+                className="group relative inline-flex items-center gap-2 px-5 py-3 rounded-full text-slate-900 dark:text-slate-100 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-900/15 dark:border-slate-300/20 ring-1 ring-black/5 dark:ring-white/5 hover:border-indigo-400 hover:ring-indigo-300/40 hover:shadow-md hover:-translate-y-px active:translate-y-0 transition-all"
                 aria-label="Open LinkedIn profile in new tab"
               >
                 {/* LinkedIn icon */}
-                <svg aria-hidden xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-5 w-5 fill-slate-900">
+                <svg aria-hidden xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-5 w-5 fill-slate-900 dark:fill-slate-100">
                   <path d="M4.983 3.5C4.983 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.483 1.12 2.483 2.5zM.5 8h4V24h-4V8zm7.5 0h3.834v2.184h.054c.534-1.012 1.84-2.082 3.789-2.082 4.054 0 4.8 2.67 4.8 6.144V24h-4v-7.36c0-1.756-.03-4.012-2.446-4.012-2.45 0-2.826 1.914-2.826 3.888V24h-4V8z" />
                 </svg>
                 <span>Connect on LinkedIn</span>
@@ -143,7 +143,7 @@ export default function Hero() {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: done ? 1 : 0, y: done ? 0 : 16 }}
                   transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
-                  className="mt-5 max-w-2xl text-slate-600"
+                  className="mt-5 max-w-2xl text-slate-600 dark:text-slate-300"
                 >
                   {subtitle}
                 </motion.p>
@@ -156,7 +156,7 @@ export default function Hero() {
                 >
                   <button
                     onClick={() => onScrollTo('#projects')}
-                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-slate-900 bg-white/80 backdrop-blur-sm border border-slate-900/15 shadow-sm hover:border-indigo-400 hover:shadow-md hover:-translate-y-px active:translate-y-0 transition-all"
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-slate-900 dark:text-slate-100 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-900/15 dark:border-slate-300/20 shadow-sm hover:border-indigo-400 hover:shadow-md hover:-translate-y-px active:translate-y-0 transition-all"
                   >
                     View Projects
                   </button>
@@ -164,10 +164,10 @@ export default function Hero() {
                     href={LINKEDIN_URL}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="group relative inline-flex items-center gap-2 px-5 py-3 rounded-full text-slate-900 bg-white/80 backdrop-blur-sm border border-slate-900/15 ring-1 ring-black/5 hover:border-indigo-400 hover:ring-indigo-300/40 hover:shadow-md hover:-translate-y-px active:translate-y-0 transition-all"
+                    className="group relative inline-flex items-center gap-2 px-5 py-3 rounded-full text-slate-900 dark:text-slate-100 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-900/15 dark:border-slate-300/20 ring-1 ring-black/5 dark:ring-white/5 hover:border-indigo-400 hover:ring-indigo-300/40 hover:shadow-md hover:-translate-y-px active:translate-y-0 transition-all"
                     aria-label="Open LinkedIn profile in new tab"
                   >
-                    <svg aria-hidden xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-5 w-5 fill-slate-900">
+                    <svg aria-hidden xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-5 w-5 fill-slate-900 dark:fill-slate-100">
                       <path d="M4.983 3.5C4.983 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.483 1.12 2.483 2.5zM.5 8h4V24h-4V8zm7.5 0h3.834v2.184h.054c.534-1.012 1.84-2.082 3.789-2.082 4.054 0 4.8 2.67 4.8 6.144V24h-4v-7.36c0-1.756-.03-4.012-2.446-4.012-2.45 0-2.826 1.914-2.826 3.888V24h-4V8z" />
                     </svg>
                     <span>Connect on LinkedIn</span>
@@ -196,8 +196,8 @@ export default function Hero() {
                         onError={() => setShowImg(false)}
                       />
                     ) : (
-                      <div className="w-full h-full grid place-items-center bg-gradient-to-br from-white to-slate-100">
-                        <div className="text-5xl font-bold text-slate-700 select-none">JD</div>
+                      <div className="w-full h-full grid place-items-center bg-gradient-to-br from-white to-slate-100 dark:from-slate-800 dark:to-slate-900">
+                        <div className="text-5xl font-bold text-slate-700 dark:text-slate-200 select-none">JD</div>
                       </div>
                     )}
                   </div>

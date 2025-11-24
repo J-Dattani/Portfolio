@@ -5,10 +5,10 @@ const links = [
   { href: '#home', label: 'Home' },
   { href: '#about', label: 'About' },
   { href: '#how', label: 'How I Work' },
+  { href: '#skills', label: 'Skills' },
   { href: '#projects', label: 'Projects' },
   { href: '#certificates', label: 'Certificates' },
-    { href: '#achievements', label: 'Achievements' },
-  { href: '#skills', label: 'Skills' },
+  { href: '#achievements', label: 'Achievements' },
   { href: '#experience', label: 'Experience' },
   { href: '#contact', label: 'Contact' },
 ]

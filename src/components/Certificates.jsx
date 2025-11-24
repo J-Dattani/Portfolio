@@ -30,7 +30,7 @@ function CertificateCard({ c, onPreview }) {
     <motion.article
       variants={item}
       whileHover={{ y: -8 }}
-      className="group relative overflow-hidden glass rounded-2xl gradient-glow"
+      className="group relative overflow-hidden glass rounded-2xl gradient-glow cursor-pointer"
     >
       <div className="relative">
         {c.image && (
@@ -47,9 +47,9 @@ function CertificateCard({ c, onPreview }) {
 
       <div className="relative z-10 p-5">
         <h3 className="font-semibold text-lg tracking-tight">{c.title}</h3>
-        <p className="mt-1 text-slate-600 text-sm">{c.issuer} • {c.year}</p>
+        <p className="mt-1 text-slate-600 dark:text-slate-400 text-sm">{c.issuer} • {c.year}</p>
         {c.description && String(c.description).trim().length > 0 && (
-          <p className="mt-2 text-slate-600 text-sm leading-snug">
+          <p className="mt-2 text-slate-600 dark:text-slate-300 text-sm leading-snug">
             {c.description}
           </p>
         )}
@@ -116,9 +116,9 @@ export default function Certificates() {
             className="relative max-w-5xl w-full"
             onClick={(e)=>e.stopPropagation()}
           >
-            <div className="glass rounded-2xl overflow-hidden bg-white max-h-[90vh] flex flex-col">
+            <div className="glass rounded-2xl overflow-hidden bg-white dark:bg-slate-800 max-h-[90vh] flex flex-col">
               {/* Preview area with a subtle neutral background so white certificates remain visible */}
-              <div className="w-full flex-1 grid place-items-center bg-slate-50 p-2 overflow-auto">
+              <div className="w-full flex-1 grid place-items-center bg-slate-50 dark:bg-slate-900 p-2 overflow-auto">
                 {selected.image && (
                   <img
                     src={selected.image}
@@ -128,14 +128,14 @@ export default function Certificates() {
                 )}
               </div>
               {/* Footer bar with title and Close action, pinned at the bottom */}
-              <div className="p-4 flex items-center justify-between bg-slate-100/95 border-t border-slate-200 sticky bottom-0">
+              <div className="p-4 flex items-center justify-between bg-slate-100/95 dark:bg-slate-800/95 border-t border-slate-200 dark:border-slate-700 sticky bottom-0">
                 <div>
-                  <h4 className="font-semibold truncate max-w-[60vw]" title={selected.title}>{selected.title}</h4>
-                  <p className="text-sm text-slate-600">{selected.issuer} • {selected.year}</p>
+                  <h4 className="font-semibold truncate max-w-[60vw] dark:text-slate-100" title={selected.title}>{selected.title}</h4>
+                  <p className="text-sm text-slate-600 dark:text-slate-400">{selected.issuer} • {selected.year}</p>
                 </div>
                 <button
                   onClick={()=>setSelected(null)}
-                  className="px-4 py-2 rounded-full border border-slate-300 hover:border-indigo-400 hover:text-indigo-700 bg-white"
+                  className="px-4 py-2 rounded-full border border-slate-300 dark:border-slate-600 hover:border-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-400 bg-white dark:bg-slate-700 dark:text-slate-100"
                 >Close</button>
               </div>
             </div>

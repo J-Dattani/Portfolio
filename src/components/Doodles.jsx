@@ -98,10 +98,10 @@ export default function Doodles() {
     <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-visible">
       {slots.map((slot, i) => {
         const slug = slugs[i % slugs.length]
-        const src = `https://cdn.simpleicons.org/${slug}/9CA3AF` // gray-400, lighter base tone
+        // Use CSS variable for dynamic color based on theme
+        const src = `https://cdn.simpleicons.org/${slug}`
         const angle = ((i * 37) % 31) - 15 // -15..15 deg
         const flip = (i * 17) % 2 ? -1 : 1
-        const targetOpacity = vw < 640 ? 0.12 : 0.18
         return (
           <motion.img
             key={`${slug}-${slot.x}-${slot.y}`}
@@ -110,12 +110,12 @@ export default function Doodles() {
             width={slot.size}
             height={slot.size}
             style={{ top: slot.y, left: slot.x, '--rot': `${angle}deg`, '--flip': flip }}
-            className="absolute grayscale select-none float-slow"
+            className="absolute grayscale select-none float-slow opacity-[var(--doodle-opacity)] dark:opacity-[var(--doodle-opacity)] transition-opacity duration-300"
             loading="lazy"
             decoding="async"
             onError={(e) => { e.currentTarget.style.display = 'none' }}
             initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: targetOpacity, y: 0 }}
+            animate={{ opacity: 'var(--doodle-opacity)', y: 0 }}
             transition={{ duration: 1.1, ease: 'easeOut', delay: 0.04 * (i % 8) }}
           />
         )

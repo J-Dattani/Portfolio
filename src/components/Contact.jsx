@@ -19,11 +19,11 @@ function LinkCard({ label, subtitle, href, Icon }) {
             <Icon size={18} />
           </div>
           <div>
-            <div className="font-medium text-slate-800">{label}</div>
-            {subtitle && <div className="text-xs text-slate-500">{subtitle}</div>}
+            <div className="font-medium text-slate-800 dark:text-slate-200">{label}</div>
+            {subtitle && <div className="text-xs text-slate-500 dark:text-slate-400">{subtitle}</div>}
           </div>
         </div>
-        <div className="text-slate-400 group-hover:text-indigo-600 transition-colors">
+        <div className="text-slate-400 dark:text-slate-500 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
           <ArrowUpRight size={18} />
         </div>
       </div>
