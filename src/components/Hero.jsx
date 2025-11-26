@@ -6,7 +6,7 @@ import profile from '../assets/profile.jpg'
 const titleText = "Hello, I’m\nJaymin Dattani\n{ }"
 const subtitle = "BTech in Computer Engineering — passionate about Web Development and cinematic UX."
 
-const LINKEDIN_URL = 'https://www.linkedin.com/in/jaymindattani'
+const LINKEDIN_URL = 'https://www.linkedin.com/in/jaymin-dattani-ba6695294/'
 
 export default function Hero() {
   const [index, setIndex] = useState(0)
