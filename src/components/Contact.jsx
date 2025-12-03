@@ -1,5 +1,5 @@
 import Section from './Section.jsx'
-import { Mail, Linkedin, Github, ArrowUpRight } from 'lucide-react'
+import { Mail, Linkedin, Github, ArrowUpRight, BookOpen } from 'lucide-react'
 
 function LinkCard({ label, subtitle, href, Icon }) {
   const external = href?.startsWith('http')
@@ -36,6 +36,7 @@ export default function Contact() {
     { label: 'Email', subtitle: 'work.jdattani@gmail.com', href: 'mailto:work.jdattani@gmail.com', Icon: Mail },
     { label: 'LinkedIn', subtitle: 'linkedin.com/in/jaymin-dattani-ba6695294', href: 'https://linkedin.com/in/jaymin-dattani-ba6695294', Icon: Linkedin },
     { label: 'GitHub', subtitle: 'github.com/J-Dattani', href: 'https://github.com/J-Dattani', Icon: Github },
+    { label: 'Medium', subtitle: 'medium.com/@work.jdattani', href: 'https://medium.com/@work.jdattani', Icon: BookOpen },
   ]
 
   return (

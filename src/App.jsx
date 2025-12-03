@@ -10,6 +10,7 @@ import About from './components/About.jsx'
 import HowIWork from './components/HowIWork.jsx'
 import Projects from './components/Projects.jsx'
 import Certificates from './components/Certificates.jsx'
+import Articles from './components/Articles.jsx'
 import Achievements from './components/Achievements.jsx'
 import Skills from './components/Skills.jsx'
 // import Testimonials from './components/Testimonials.jsx' // Un-comment to enable when testimonials data is ready
@@ -37,6 +38,8 @@ export default function App() {
   <Skills />
 
   <Projects />
+
+  <Articles />
 
   <Certificates />
 

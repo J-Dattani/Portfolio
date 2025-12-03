@@ -34,6 +34,25 @@ function getIcon(label) {
   return Star
 }
 
+// Map icon names to icon components
+function getIconComponent(iconName) {
+  const iconMap = {
+    FileCode,
+    Palette,
+    Code2,
+    Database,
+    Braces,
+    Monitor,
+    Server,
+    Plug,
+    GitBranch,
+    Lightbulb,
+    Globe,
+    Star
+  }
+  return iconMap[iconName] || Star
+}
+
 const container = {
   hidden: { opacity: 0 },
   visible: {
@@ -185,69 +204,69 @@ export default function Skills() {
           { 
             name: 'HTML5', 
             percentage: ((allLanguageTotals['HTML'] || 0) / totalBytes * 100).toFixed(1),
-            icon: FileCode,
+            iconName: 'FileCode',
             color: '#e34c26'
           },
           { 
             name: 'CSS3', 
             percentage: ((allLanguageTotals['CSS'] || 0) / totalBytes * 100).toFixed(1),
-            icon: Palette,
+            iconName: 'Palette',
             color: '#563d7c'
           },
           { 
             name: 'JavaScript', 
             percentage: ((allLanguageTotals['JavaScript'] || 0) / totalBytes * 100).toFixed(1),
-            icon: Code2,
+            iconName: 'Code2',
             color: '#f1e05a'
           },
           { 
             name: 'PHP', 
             percentage: ((allLanguageTotals['PHP'] || 0) / totalBytes * 100).toFixed(1),
-            icon: Code2,
+            iconName: 'Code2',
             color: '#4F5D95'
           },
           { 
             name: 'MySQL', 
             percentage: 75, // Static for now as it's not detectable via GitHub API
-            icon: Database,
+            iconName: 'Database',
             color: '#00758f'
           },
           { 
             name: 'JSON', 
             percentage: 85,
-            icon: Braces,
+            iconName: 'Braces',
             color: '#292929'
           },
           { 
             name: 'Responsive Design', 
             percentage: 90,
-            icon: Monitor,
+            iconName: 'Monitor',
             color: '#61dafb'
           },
           { 
             name: 'Web Hosting', 
             percentage: hostingPercentage.toFixed(1),
-            icon: Server,
+            iconName: 'Server',
             color: '#00c7b7',
             count: hostedRepos
           },
           { 
             name: 'API Integration', 
             percentage: 80,
-            icon: Plug,
+            iconName: 'Plug',
             color: '#ff6c37'
           },
           { 
             name: 'Git', 
             percentage: Math.min(gitPercentage, 100).toFixed(1),
-            icon: GitBranch,
+            iconName: 'GitBranch',
             color: '#f05032',
             count: totalContributions
           },
           { 
             name: 'Problem Solving', 
             percentage: problemSolvingPercentage.toFixed(1),
-            icon: Lightbulb,
+            iconName: 'Lightbulb',
             color: '#ffd700'
           },
         ]
@@ -275,17 +294,17 @@ export default function Skills() {
         
         // Fallback to static data if API fails and no cache
         const fallbackSkills = [
-          { name: 'HTML5', percentage: '37.1', icon: FileCode, color: '#e34c26' },
-          { name: 'CSS3', percentage: '28.1', icon: Palette, color: '#563d7c' },
-          { name: 'JavaScript', percentage: '20.6', icon: Code2, color: '#f1e05a' },
-          { name: 'PHP', percentage: '12.4', icon: Code2, color: '#4F5D95' },
-          { name: 'MySQL', percentage: '75', icon: Database, color: '#00758f' },
-          { name: 'JSON', percentage: '85', icon: Braces, color: '#292929' },
-          { name: 'Responsive Design', percentage: '90', icon: Monitor, color: '#61dafb' },
-          { name: 'Web Hosting', percentage: '70', icon: Server, color: '#00c7b7', count: 5 },
-          { name: 'API Integration', percentage: '80', icon: Plug, color: '#ff6c37' },
-          { name: 'Git', percentage: '85', icon: GitBranch, color: '#f05032', count: 161 },
-          { name: 'Problem Solving', percentage: '88', icon: Lightbulb, color: '#ffd700' },
+          { name: 'HTML5', percentage: '37.1', iconName: 'FileCode', color: '#e34c26' },
+          { name: 'CSS3', percentage: '28.1', iconName: 'Palette', color: '#563d7c' },
+          { name: 'JavaScript', percentage: '20.6', iconName: 'Code2', color: '#f1e05a' },
+          { name: 'PHP', percentage: '12.4', iconName: 'Code2', color: '#4F5D95' },
+          { name: 'MySQL', percentage: '75', iconName: 'Database', color: '#00758f' },
+          { name: 'JSON', percentage: '85', iconName: 'Braces', color: '#292929' },
+          { name: 'Responsive Design', percentage: '90', iconName: 'Monitor', color: '#61dafb' },
+          { name: 'Web Hosting', percentage: '70', iconName: 'Server', color: '#00c7b7', count: 5 },
+          { name: 'API Integration', percentage: '80', iconName: 'Plug', color: '#ff6c37' },
+          { name: 'Git', percentage: '85', iconName: 'GitBranch', color: '#f05032', count: 161 },
+          { name: 'Problem Solving', percentage: '88', iconName: 'Lightbulb', color: '#ffd700' },
         ]
         setDynamicSkills(fallbackSkills)
         setLoading(false)
@@ -312,7 +331,7 @@ export default function Skills() {
             className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
           >
             {dynamicSkills.map((skill) => {
-              const Icon = skill.icon
+              const Icon = getIconComponent(skill.iconName)
               return (
                 <motion.div
                   key={skill.name}
@@ -331,7 +350,7 @@ export default function Skills() {
                       >
                         <Icon size={18} />
                       </div>
-                      <span className="font-semibold text-base">{skill.name}</span>
+                      <span className="font-semibold text-base text-slate-800 dark:text-slate-100">{skill.name}</span>
                     </div>
                     <div className="text-right">
                       <span 
