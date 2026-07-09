@@ -35,8 +35,9 @@ function ProjectCard({ p }) {
         {p.cover && (
           <img
             src={p.cover}
-            alt={p.title + ' cover'}
+            alt={`${p.title} project screenshot`}
             loading="lazy"
+            decoding="async"
             onError={onImgError}
             className="block w-full aspect-[16/9] object-cover"
           />

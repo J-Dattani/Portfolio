@@ -36,8 +36,9 @@ function CertificateCard({ c, onPreview }) {
         {c.image && (
           <img
             src={c.image}
-            alt={c.title + ' certificate'}
+            alt={`${c.title} certificate preview`}
             loading="lazy"
+            decoding="async"
             onError={onImgError}
             className="block w-full aspect-[16/10] object-contain bg-slate-50 p-2"
           />
@@ -122,7 +123,8 @@ export default function Certificates() {
                 {selected.image && (
                   <img
                     src={selected.image}
-                    alt={selected.title + ' large preview'}
+                    alt={`${selected.title} certificate large preview`}
+                    decoding="async"
                     className="max-w-full max-h-[80vh] object-contain"
                   />
                 )}

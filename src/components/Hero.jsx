@@ -57,6 +57,8 @@ export default function Hero() {
                   <img
                     src={profile}
                     alt="Portrait of Jaymin Dattani"
+                    fetchPriority="high"
+                    decoding="async"
                     className={`w-full h-full object-cover ${imgLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
                     onLoad={() => setImgLoaded(true)}
                     onError={() => setShowImg(false)}
@@ -191,6 +193,8 @@ export default function Hero() {
                       <img
                         src={profile}
                         alt="Portrait of Jaymin Dattani"
+                        fetchPriority="high"
+                        decoding="async"
                         className={`w-full h-full object-cover ${imgLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
                         onLoad={() => setImgLoaded(true)}
                         onError={() => setShowImg(false)}

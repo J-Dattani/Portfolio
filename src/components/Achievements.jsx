@@ -38,8 +38,9 @@ function AchievementCard({ a, onPreview }) {
         {a.image && (
           <img
             src={a.image}
-            alt={a.title + ' image'}
+            alt={`${a.title} achievement preview`}
             loading="lazy"
+            decoding="async"
             onError={onImgError}
             className="block w-full aspect-[16/10] object-contain bg-slate-50 p-2"
           />
@@ -97,7 +98,8 @@ export default function Achievements() {
                 {selected.image && (
                   <img
                     src={selected.image}
-                    alt={selected.title + ' large preview'}
+                    alt={`${selected.title} achievement large preview`}
+                    decoding="async"
                     className="max-w-full max-h-[80vh] object-contain"
                   />
                 )}

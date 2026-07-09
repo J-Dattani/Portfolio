@@ -4,7 +4,7 @@ import Section from './Section.jsx'
 import { ExternalLink, Calendar, Clock } from 'lucide-react'
 
 const container = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 0 }, 
   visible: {
     opacity: 1,
     transition: { staggerChildren: 0.12, delayChildren: 0.1 },
@@ -110,9 +110,10 @@ export default function Articles() {
                   <div className="relative h-48 overflow-hidden bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900/30 dark:to-purple-900/30">
                     <img
                       src={article.thumbnail}
-                      alt={article.title}
+                      alt={`Thumbnail for ${article.title}`}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       loading="lazy"
+                      decoding="async"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>

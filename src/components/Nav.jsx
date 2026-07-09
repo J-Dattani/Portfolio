@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const links = [
@@ -18,32 +18,38 @@ export default function Nav() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [active, setActive] = useState('#home')
+  const scrollRafRef = useRef(0)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8)
-    onScroll()
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    const updateScrollState = () => {
+      scrollRafRef.current = 0
 
-  // Detect which section is active while scrolling (minimal + performant)
-  useEffect(() => {
-    const ids = links.map(l => l.href)
-    const onScrollSpy = () => {
-      const y = window.scrollY + 120 // header offset
+      const nextScrolled = window.scrollY > 8
+      setScrolled((current) => (current === nextScrolled ? current : nextScrolled))
+
+      const y = window.scrollY + 120
       let current = '#home'
-      for (const href of ids) {
-        const el = document.querySelector(href)
+
+      for (const { href } of links) {
+        const el = document.getElementById(href.slice(1))
         if (el && el.offsetTop <= y) current = href
       }
-      setActive(current)
+
+      setActive((currentActive) => (currentActive === current ? currentActive : current))
     }
-    onScrollSpy()
-    window.addEventListener('scroll', onScrollSpy, { passive: true })
-    window.addEventListener('resize', onScrollSpy)
+
+    const onScroll = () => {
+      if (scrollRafRef.current) return
+      scrollRafRef.current = window.requestAnimationFrame(updateScrollState)
+    }
+
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll, { passive: true })
     return () => {
-      window.removeEventListener('scroll', onScrollSpy)
-      window.removeEventListener('resize', onScrollSpy)
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+      if (scrollRafRef.current) window.cancelAnimationFrame(scrollRafRef.current)
     }
   }, [])
 
@@ -51,14 +57,13 @@ export default function Nav() {
     e.preventDefault()
     setActive(href) // immediate visual feedback; scroll spy will confirm
     setOpen(false) // close mobile menu
-    
-    // Small delay to let menu close before scrolling
-    setTimeout(() => {
-      const el = document.querySelector(href)
+
+    window.requestAnimationFrame(() => {
+      const el = document.getElementById(href.slice(1))
       if (el) {
         el.scrollIntoView({ behavior: 'smooth', block: 'start' })
       }
-    }, 100)
+    })
   }
 
   return (
