@@ -95,7 +95,7 @@ export default function Doodles() {
   }, [baseSlots])
 
   return (
-    <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-visible">
+    <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
       {slots.map((slot, i) => {
         const slug = slugs[i % slugs.length]
         // Use CSS variable for dynamic color based on theme
