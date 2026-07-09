@@ -2,8 +2,18 @@ import Postman from '../assets/certs/Postman - Postman API Fundamentals Student 
 import Forage from '../assets/certs/Mastercard Cybersecurity Job Simulation.jpg'
 import OracleU from '../assets/certs/Oracle APEX Cloud Developer Certified Professional.jpg'
 import GDG from '../assets/certs/CCD 2025.png'
+import HackerRankNodeBasic from '../assets/certs/HackerRank-Node-Basic-Certificate.png'
 
 export const certificates = [
+  {
+    id: 'HackerRank Node Basic Certificate',
+    title: 'Node (Basic) Certificate',
+    issuer: 'HackerRank',
+    year: '',
+    description: 'It covers topics like Package and Modules Management, Callbacks, Event Loop, Event Emitter, Buffers, Streams and File Systems.',
+    image: HackerRankNodeBasic,
+    verifyUrl: 'https://www.hackerrank.com/certificates/iframe/eb63cbeead7e',
+  },
   {
     id: 'Postman - Postman API Fundamentals Student Expert - 2024-11-19',
     title: 'Postman - Postman API Fundamentals Student Expert',

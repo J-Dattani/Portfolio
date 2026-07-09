@@ -25,6 +25,7 @@ function CertificateCard({ c, onPreview }) {
   }
   const verifyUrl = typeof c.verifyUrl === 'string' ? c.verifyUrl.trim() : ''
   const hasVerify = verifyUrl.length > 0
+  const metaLine = [c.issuer, c.year].filter((part) => String(part).trim().length > 0).join(' • ')
 
   return (
     <motion.article
@@ -48,7 +49,7 @@ function CertificateCard({ c, onPreview }) {
 
       <div className="relative z-10 p-5">
         <h3 className="font-semibold text-lg tracking-tight">{c.title}</h3>
-        <p className="mt-1 text-slate-600 dark:text-slate-400 text-sm">{c.issuer} • {c.year}</p>
+        <p className="mt-1 text-slate-600 dark:text-slate-400 text-sm">{metaLine}</p>
         {c.description && String(c.description).trim().length > 0 && (
           <p className="mt-2 text-slate-600 dark:text-slate-300 text-sm leading-snug">
             {c.description}
